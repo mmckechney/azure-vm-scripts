@@ -739,12 +739,15 @@ foreach($cmd in $commands)
     if($CommandOutputFile -ne $null)
     {
         $cmd | Out-File -FilePath $CommandOutputFile -Append 
-        Write-Host "Generated PowerShell scripts saved to file `"$CommandOutputFile`"" -ForegroundColor Green
     }else
     {
         Write-Host $cmd -ForegroundColor Green
     }
 
+}
+if($CommandOutputFile -ne $null)
+{
+    Write-Host "Generated PowerShell scripts saved to file `"$CommandOutputFile`"" -ForegroundColor Green
 }
 # END  
 
